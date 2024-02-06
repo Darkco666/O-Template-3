@@ -14,7 +14,11 @@ body {
 
 :root {
     --main-color: #2196f3;
-    --main-color-alt: #1787e0
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
 }
 
 ul {
@@ -49,4 +53,181 @@ ul {
     .container {
         width: 1170px;
     }
+}
+
+/* ============================================= */
+
+header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 10px #ddd;
+}
+
+header .container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: var(--main-color);
+    font-size: 26px;
+    text-decoration: none;
+    font-weight: bold;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    header .logo {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+header ul.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    header .main-nav {
+        margin: auto;
+    }
+}
+
+header ul.main-nav>li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    header ul.main-nav>li>a {
+        padding: 10px;
+        font-size: 13px;
+        height: 40px;
+    }
+}
+
+header ul.main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+    /* for Chrome, Safari, some Opera versions, iOS browsers */
+    -webkit-transition: var(--main-transition);
+    /* for Firefox */
+    -moz-transition: var(--main-transition);
+    /* for older Opera versions, rarely used now */
+    -ms-transition: var(--main-transition);
+    /*for Internet Explorer, older Microsoft Edge  */
+    -o-transition: var(--main-transition);
+}
+
+header ul.main-nav>li>a:hover {
+    color: var(--main-color-alt);
+    background-color: #fafafa;
+}
+
+header ul.main-nav>li>a:hover::before {
+    left: 0;
+}
+
+header .main-nav>li .mega-menue {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 30px;
+    background-color: white;
+    border-bottom: 3px solid var(--main-color);
+    z-index: -1;
+    display: flex;
+    gap: 40px;
+    top: calc(100% + 50px);
+    visibility: hidden;
+    transition: top var(--main-transition), opacity var(--main-transition);
+    -webkit-transition: top var(--main-transition), opacity var(--main-transition);
+    -moz-transition: top var(--main-transition), opacity var(--main-transition);
+    -ms-transition: top var(--main-transition), opacity var(--main-transition);
+    -o-transition: top var(--main-transition), opacity var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    header .main-nav>li .mega-menue {
+        flex-direction: column;
+        gap: 0;
+        padding: 5px;
+    }
+}
+
+header .main-nav>li .mega-menue img {
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    header .main-nav>li .mega-menue .image {
+        display: none;
+    }
+}
+
+header .main-nav>li .mega-menue ul.links {
+    min-width: 250px;
+    flex: 1;
+}
+
+header .main-nav>li .mega-menue .links li {
+    position: relative;
+}
+
+header .main-nav>li .mega-menue .links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fafafa;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+header .main-nav>li .mega-menue .links li:hover::before {
+    width: 100%;
+}
+
+header .main-nav>li .mega-menue .links li:not(:last-child) {
+    border-bottom: 1px solid #e9e6e6;
+}
+
+header .main-nav>li .mega-menue .links li a {
+    color: var(--main-color);
+    padding: 15px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header .main-nav>li:hover .mega-menue {
+    visibility: visible;
+    z-index: 100;
+    top: 103%;
 }
