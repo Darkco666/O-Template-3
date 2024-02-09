@@ -38,6 +38,19 @@ a {
     margin-right: auto;
 }
 
+::selection {
+    color: white;
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
 /* Small */
 @media (min-width: 768px) {
     .container {
