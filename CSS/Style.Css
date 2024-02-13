@@ -257,7 +257,7 @@ header .main-nav>li .mega-menue ul.links {
     flex: 1;
 }
 
-header .main-nav>li .mega-menue .links li {
+header .main-nav li .mega-menue ul.links li {
     position: relative;
 }
 
@@ -269,7 +269,7 @@ header .main-nav>li .mega-menue .links li::before {
     width: 0;
     height: 100%;
     background-color: #fafafa;
-    z-index: -1;
+    z-index: 0;
     transition: var(--main-transition);
 }
 
@@ -287,6 +287,7 @@ header .main-nav>li .mega-menue .links li a {
     display: block;
     font-size: 18px;
     font-weight: bold;
+    position: relative;
 }
 
 header .main-nav>li:hover .mega-menue {
@@ -686,6 +687,63 @@ header .main-nav>li:hover .mega-menue {
 .features .box:hover a {
     background-position: left bottom;
     color: white;
+}
+
+/* ============================================= */
+
+.testimonials {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--section-background);
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonials .container .box {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+    border-radius: 6px;
+    position: relative;
+}
+
+.testimonials .container .box img {
+    position: absolute;
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    right: -10px;
+    top: -50px;
+    border: 10px solid var(--section-background);
+}
+
+.testimonials .container .box h3 {
+    margin: 0 0 10px;
+}
+
+.testimonials .box .title {
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.testimonials .box .rate i {
+    color: #ffc107;
+}
+
+.testimonials .box p {
+    line-height: 1.5;
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 /* Animations */
