@@ -746,6 +746,111 @@ header .main-nav>li:hover .mega-menue {
     margin-bottom: 0;
 }
 
+/* ============================================= */
+
+.t-mem {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: white;
+}
+
+.t-mem .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.t-mem .container .box {
+    position: relative;
+}
+
+.t-mem .container .box::before,
+.t-mem .container .box::after {
+    content: "";
+    background-color: #f3f3f3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+.t-mem .container .box::before {
+    width: calc(100% - 60px);
+}
+
+.t-mem .container .box::after {
+    z-index: 0;
+    background-color: #e4e4e4;
+    width: 0;
+}
+
+.t-mem .container .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.t-mem .container .box .data img {
+    width: calc(100% - 60px);
+    transition: var(--main-transition);
+    border-radius: 10px;
+}
+
+.t-mem .container .box .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.t-mem .container .box .social a {
+    height: 30px;
+}
+
+.t-mem .container .box .social a i {
+    color: #777;
+    transition: var(--main-transition);
+}
+
+.t-mem .container .box .social a:hover i {
+    color: var(--main-color);
+}
+
+.t-mem .container .box .info {
+    position: relative;
+    padding-left: 80px;
+    z-index: 1;
+}
+
+.t-mem .container .box .info h3 {
+    margin-bottom: 0;
+    color: var(--main-color);
+    font-size: 22px;
+    transition: var(--main-transition);
+    margin-top: 22px;
+}
+
+.t-mem .container .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.t-mem .container .box:hover::after {
+    width: calc(100% - 60px);
+}
+
+.t-mem .container .box:hover .data img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
 /* Animations */
 
 @keyframes up-and-down {
