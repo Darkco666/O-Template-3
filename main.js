@@ -41,22 +41,30 @@ upButton.addEventListener("click", () =>
   })
 );
 
+let section = document.querySelector(".our-skills");
+let progressSpans = document.querySelectorAll(
+  ".our-skills .skills .skill .the-progress span "
+);
+// let spansNum = document.querySelectorAll(".our-skills .skills .skill h3 span");
+
+window.onscroll = function () {
+  if (window.scrollY >= section.offsetTop - 250) {
+    progressSpans.forEach((span) => {
+      for (
+        let i = 0;
+        i <= parseInt(span.getAttribute("full-width"));
+        i += 0.1
+      ) {
+        if (span.style.width != `${span.getAttribute("full-width")}%`) {
+          span.style.width = `${i}%`;
+        }
+      }
+    });
+  }
+};
+
 let ads = document.createElement("div");
 ads.className = "ads";
 upButton.after(ads);
 
 // setInterval(() => {}, 60000);
-
-let myPro = new Promise((resolve, unResolve) => {
-  let connect = true;
-  if (connect === true) {
-    resolve("Connection Is Successful");
-  } else {
-    unResolve("Connection Is Unseccessful");
-  }
-}).then(
-  (resolved) => console.log(`Good ${resolved}`),
-  (rejected) => console.log(`Bad ${rejected}`)
-);
-
-console.log(myPro);
