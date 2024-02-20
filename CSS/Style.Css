@@ -152,6 +152,16 @@ a {
     display: none;
 }
 
+.up-arrow.appear {
+    animation: appear 1s linear backwards;
+    -webkit-animation: appear 1s linear backwards;
+}
+
+.up-arrow.disappear {
+    animation: disappear 1s linear backwards;
+    -webkit-animation: disappear 1s linear backwards;
+}
+
 .up-arrow {
     z-index: 100;
 }
