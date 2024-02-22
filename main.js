@@ -75,6 +75,19 @@ window.onscroll = function () {
   }
 };
 
+let spans = document.querySelectorAll(
+  ".events .info .time .unit span:first-child"
+);
+
+setInterval(() => {
+  let date = new Date();
+  spans[0].textContent = date.getDate();
+  spans[1].textContent = date.getHours();
+  spans[2].textContent = date.getMinutes();
+  spans[3].textContent = date.getSeconds();
+}, 1000);
+
+
 let ads = document.createElement("div");
 ads.className = "ads";
 upButton.after(ads);
