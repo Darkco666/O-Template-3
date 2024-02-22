@@ -87,6 +87,9 @@ setInterval(() => {
   spans[3].textContent = date.getSeconds();
 }, 1000);
 
+// Future Feture Coming soon.
+// const region = navigator.language.split("-")[1]; 
+// console.log(region);
 
 let ads = document.createElement("div");
 ads.className = "ads";
